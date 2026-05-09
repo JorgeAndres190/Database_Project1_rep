@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Netflix Shows Database</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main class="page-shell">
+		<header class="hero">
+			<div class="brand-row">
+				<div class="brand-mark" aria-hidden="true">N</div>
+				<p class="eyebrow">Netflix-inspired catalog</p>
+			</div>
+			<h1>Netflix Shows Database</h1>
+			<p class="subtitle">Browse all shows or search by title.</p>
+
+			<div class="controls" role="search" aria-label="Filter shows">
+				<div class="search-bar">
+					<input id="search-input" type="search" placeholder="Search by title" aria-label="Search by title">
+					<button id="search-button" type="button">Search</button>
+				</div>
+
+				<div class="filter-row">
+					<label class="filter-field" for="year-filter">
+						<span>Release year</span>
+						<select id="year-filter" aria-label="Filter by release year">
+							<option value="all">All years</option>
+						</select>
+					</label>
+
+					<label class="filter-field" id="genre-filter-group" for="genre-filter">
+						<span>Genre</span>
+						<select id="genre-filter" aria-label="Filter by genre" disabled>
+							<option value="all">All genres</option>
+						</select>
+					</label>
+
+					<label class="filter-field" for="rating-sort">
+						<span>Sort by rating</span>
+						<select id="rating-sort" aria-label="Sort by rating">
+							<option value="default">Default</option>
+							<option value="desc">Best rated to worst rated</option>
+							<option value="asc">Worst rated to best rated</option>
+						</select>
+					</label>
+
+					<button id="reset-button" class="reset-button" type="button">Reset</button>
+				</div>
+
+				<p id="show-count" class="show-count">Showing 0 shows</p>
+			</div>
+		</header>
+
+		<section class="results-section">
+			<div id="shows-container" class="shows-container" aria-live="polite"></div>
+		</section>
+	</main>
+
+	<script src="/script.js"></script>
+</body>
+</html>
